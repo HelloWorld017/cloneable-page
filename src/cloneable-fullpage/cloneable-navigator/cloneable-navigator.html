@@ -1,0 +1,22 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="cloneable-navigator">
+	<template>
+		<style>
+			ul {
+				position: fixed;
+				right: 0;
+			}
+		</style>
+
+		<ul>
+			<content></content>
+		</ul>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-navigator'
+		});
+	</script>
+</dom-module>

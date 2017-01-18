@@ -1,0 +1,57 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<script src="/bower_components/particleground/jquery.particleground.min.js"></script>
+
+<dom-module id="cloneable-main">
+	<template>
+		<style>
+			main {
+				position: absolute;
+				top: 64px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				/*width: 100vw;
+				height: calc(100vh - 64px);*/
+			}
+
+			section {
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				display: table;
+			}
+
+			.main-section-inner {
+				color: #fff;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+			}
+		</style>
+
+		<main id="main">
+			<section>
+				<div class="main-section-inner">
+					<content></content>
+				</div>
+			</section>
+		</main>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-main',
+			attached: function(){
+				if(this.$.main.attached) return;
+				particleground(this.$.main, {
+					dotColor: '#fff',
+					lineColor: '#fff'
+				});
+				this.$.main.attached = true;
+				document.querySelector('.pg-canvas').style.position = "absolute";
+				document.querySelector('.pg-canvas').style.opacity = "0.3";
+				//document.querySelector('.pg-canvas').style.pointerEvents = "none";
+			}
+		});
+	</script>
+</dom-module>

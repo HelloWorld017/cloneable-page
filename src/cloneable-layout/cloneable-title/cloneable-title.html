@@ -1,0 +1,25 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="stylesheet" href="/bower_components/nanum-square/NanumSquare.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> -->
+
+<dom-module id="cloneable-title">
+	<template>
+		<style>
+			h1 {
+				padding: 0;
+				margin: 0;
+				font-size: 64px;
+				font-weight: 900;
+				font-family: /*'Orbitron', */'NanumSquare', sans-serif;
+			}
+		</style>
+
+		<h1><content></content></h1>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-title'
+		});
+	</script>
+</dom-module>

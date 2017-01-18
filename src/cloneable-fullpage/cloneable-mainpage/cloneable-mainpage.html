@@ -1,0 +1,32 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="cloneable-mainpage">
+	<template>
+		<style>
+			section {
+				background: #141E30;
+				background: -webkit-radial-gradient(100vw 100vh, farthest-corner, #141E30 , #243B55);
+				background: -moz-radial-gradient(100vw 100vh, farthest-corner, #141E30 , #243B55);
+				background: radial-gradient(circle farthest-corner at 100vw 100vh, #141E30 , #243B55);
+				width: 100vw;
+				height: 100vh;
+			}
+		</style>
+
+		<section>
+			<content></content>
+		</section>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-mainpage',
+			properties: {
+				color: {
+					type: String,
+					value: '#000'
+				}
+			}
+		});
+	</script>
+</dom-module>

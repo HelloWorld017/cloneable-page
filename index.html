@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+
+		<title>110EIm's Page</title>
+
+		<script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+		<link rel="import" href="/src/cloneable-layout/cloneable-layout.html">
+		<link rel="import" href="/src/cloneable-fullpage/cloneable-fullpage.html">
+
+		<style>
+			html, body {
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<cloneable-root>
+			<cloneable-mainpage>
+				<cloneable-header title="모공히간">
+					<cloneable-navigation content="My Site" href="https://110e.im"></cloneable-navigation>
+					<cloneable-navigation content="My Site2" href="https://110e.im"></cloneable-navigation>
+					<cloneable-navigation content="Lorem" href="https://110e.im"></cloneable-navigation>
+				</cloneable-header>
+
+				<cloneable-main>
+					<cloneable-title>Lorem Title</cloneable-title>
+					<cloneable-seperator></cloneable-seperator>
+					<cloneable-desc>Lorem ipsum dolor sit amet, consectetur adipisicing elit</cloneable-desc>
+				</cloneable-main>
+			</cloneable-mainpage>
+
+			<cloneable-subpage background="#00C0A0">
+				<cloneable-main>
+					<cloneable-title>Lorem Title</cloneable-title>
+					<cloneable-seperator></cloneable-seperator>
+					<cloneable-desc>Lorem ipsum dolor sit amet, consectetur adipisicing elit</cloneable-desc>
+				</cloneable-main>
+			</cloneable-subpage>
+		</cloneable-root>
+
+		<cloneable-navigator>
+		</cloneable-navigator>
+	</body>
+</html>

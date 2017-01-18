@@ -1,0 +1,38 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="cloneable-bullet">
+	<template>
+		<style>
+			a {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background: #fff;
+				border-radius: 5px;
+			}
+
+			li {
+				list-style-type: none;
+			}
+		</style>
+
+		<li>
+			<a on-click="{{scroll}}"></a>
+		</li>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-bullet',
+			properties: {
+				scrollto: {
+					type: String,
+					value: "id"
+				}
+			},
+			scroll: function(){
+				this.fire('scrollTo', {scrollto: this.scrollto});
+			}
+		});
+	</script>
+</dom-module>

@@ -1,0 +1,33 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="cloneable-subpage">
+	<template>
+		<style>
+			section {
+				background: var(--color);
+				width: 100vw;
+				height: 100vh;
+				position: relative;
+			}
+		</style>
+
+		<section>
+			<content></content>
+		</section>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-subpage',
+			properties: {
+				background: {
+					type: String,
+					value: '#000'
+				}
+			},
+			ready: function(){
+	 			this.customStyle['--color'] = this.background;
+			}
+		});
+	</script>
+</dom-module>

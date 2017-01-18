@@ -1,0 +1,28 @@
+{
+  "name": "110EIm-page",
+  "authors": [
+    "HelloWorld017 <deu07115@gmail.com>"
+  ],
+  "description": "Personal page for 110EIm",
+  "main": "index.html",
+  "keywords": [
+    "Design"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.23",
+    "polymer": "^1.7.1",
+    "nanum-square": "fly-light/NanumSquare",
+    "neon-animation": "^1.2.4",
+    "nanum-barun-gothic": "NanumBarunGothic#^1.0.0"
+  }
+}
