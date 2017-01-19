@@ -3,20 +3,36 @@
 <dom-module id="cloneable-navigator">
 	<template>
 		<style>
-			ul {
+			:host {
 				position: fixed;
-				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 30px;
+				background: rgba(0, 0, 0, 0.3);
+				padding: 5px;
 			}
 		</style>
 
-		<ul>
-			<content></content>
-		</ul>
 	</template>
 
 	<script>
 		Polymer({
-			is: 'cloneable-navigator'
+			is: 'cloneable-navigator',
+			attached: function(){
+				var _this = this;
+				Array.prototype.forEach.call(this.domHost._getPages(), function(v, k){
+					var bullet = _this.ownerDocument.createElement('cloneable-bullet');
+					bullet.setAttribute('id', k);
+					_this.appendChild(bullet);
+				});
+			},
+			_active: function(num){
+				Array.prototype.forEach.call(this.children, function(v, k){
+					v.classList.remove('active');
+				});
+
+				this.children[num].classList.add('active');
+			}
 		});
 	</script>
 </dom-module>

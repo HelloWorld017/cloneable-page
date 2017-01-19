@@ -1,0 +1,19 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="cloneable-pages">
+	<template>
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'cloneable-pages',
+			_getPages: function(){
+				return this.children;
+			},
+			_getMainPage: function(){
+				return this.querySelector('cloneable-mainpage');
+			}
+		});
+	</script>
+</dom-module>

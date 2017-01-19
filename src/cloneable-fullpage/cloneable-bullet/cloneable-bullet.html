@@ -4,21 +4,30 @@
 	<template>
 		<style>
 			a {
-				display: inline-block;
+				cursor: pointer;
+				display: block;
 				width: 10px;
 				height: 10px;
-				background: #fff;
+				background: #eeeeee;
 				border-radius: 5px;
+				margin: 5px 0;
 			}
 
-			li {
-				list-style-type: none;
+			a:hover {
+				background: #fff;
+			}
+
+			:host.active a:hover {
+				background: #bdbdbd;
+			}
+
+			:host.active a {
+				cursor: default;
+				background: #bdbdbd;
 			}
 		</style>
 
-		<li>
-			<a on-click="{{scroll}}"></a>
-		</li>
+		<a on-click="{{scroll}}"></a>
 	</template>
 
 	<script>

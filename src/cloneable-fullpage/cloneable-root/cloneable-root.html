@@ -1,5 +1,4 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
 <dom-module id="cloneable-root">
 	<template>
@@ -13,12 +12,37 @@
 			}
 		</style>
 
-		<content></content>
+		<cloneable-pages>
+			<content></content>
+		</cloneable-pages>
+		<cloneable-navigator></cloneable-navigator>
 	</template>
 
 	<script>
 		Polymer({
-			is: 'cloneable-root'
+			is: 'cloneable-root',
+			attached: function(){
+				if(!this.pages) this.pages = this.querySelector('cloneable-pages');
+				if(!this.navigator) this.navigator = this.querySelector('cloneable-navigator');
+				if(this._getPages().length <= 0 || !this._getMainPage()){
+					throw new Error("No main page or no pages!");
+				}
+
+				this.navigator._active(this._getMainPageIndex());
+			},
+			_getPages: function(){
+				if(!this.pages) this.pages = this.querySelector('cloneable-pages');
+				if(!this.pages) return null;
+				return this.pages._getPages();
+			},
+			_getMainPage: function(){
+				if(!this.pages) this.pages = this.querySelector('cloneable-pages');
+				if(!this.pages) return null;
+				return this.pages._getMainPage();
+			},
+			_getMainPageIndex: function(){
+				return Array.prototype.slice.call(this._getPages()).indexOf(this._getMainPage());
+			}
 		});
 	</script>
 </dom-module>
